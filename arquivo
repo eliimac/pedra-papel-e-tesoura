@@ -8,7 +8,7 @@ def joguinho(usuario, pc):
     derrota = 0
     empate = 0
     if usuario == pc:
-        empates +=1
+        empate +=1
         return f'Empate! {usuario} X {pc}'
     elif usuario == 'pedra' and pc == "tesoura":
         vitoria +=1
