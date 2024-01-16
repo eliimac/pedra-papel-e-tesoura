@@ -1,84 +1,32 @@
 import random
 
-lista =['pedra', 'papel', 'tesoura']
-
-vitorias = 0
-empates = 0 
-derrotas = 0
-
-while True:
-    print("_"*60)
-    print("""
-    pedra, papel e tesoura
-
-    E = estatisticas
-    F = finalizar
-    """)
-    print("_"*60)
-    opcao = input('Digite:\n').lower()
-    i = random.choice(lista)
-
-    if opcao == 'pedra' and i == 'pedra':
+def escolhaIa():
+    return random.choice(['pedra', 'papel', 'tesoura'])
+    
+def joguinho(usuario, pc):
+    vitoria = 0
+    derrota = 0
+    empate = 0
+    if usuario == pc:
         empates +=1
-        print(f'{opcao} X {i}')
-        print('Empate!')
-        print("_"*60)
-    elif opcao == 'pedra'and i == 'papel':
-        derrotas += 1
-        print(f'{opcao} X {i}')
-        print('papel cobre pedra, pc ganhou!')
-        print("_"*60)
-    elif opcao == 'pedra' and i == 'tesoura':
-        vitorias += 1
-        vitorias += 1
-        print(f'{opcao} X {i}')
-        print('pedra quebra tesoura, você ganhou!')
-        print("_"*60)
-
-    elif opcao == 'papel' and i == 'papel':
-        empates +=1
-        print(f'{opcao} X {i}')
-        print('Empate!')
-        print("_"*60)
-    elif opcao == 'papel' and i == 'tesoura':
-        derrotas += 1
-        print(f'{opcao} X {i}')
-        print('tesoura corta papel, pc ganhou!')
-        print("_"*60)
-    elif opcao == 'papel' and i == 'pedra':
-        vitorias += 1
-        print(f'{opcao} X {i}')
-        print('papel cobre pedra, você ganhou!')
-        print("_"*60)
-
-    elif opcao == 'tesoura' and i == 'tesoura':
-        empates +=1
-        print(f'{opcao} X {i}')
-        print('empate!')
-        print("_"*60)
-    elif opcao == 'tesoura' and i == 'papel':
-        vitorias += 1
-        print(f'{opcao} X {i}')
-        print('tesoura corta papel, você ganhou!')
-        print("_"*60)
-    elif opcao == 'tesoura' and i == 'pedra':
-        derrotas += 1
-        print(f'{opcao} X {i}')
-        print('pedra quebra tesoura, pc ganhou!')
-        print("_"*60)
-        
-    elif opcao == 'f':
-        print('finalizando, até a próxima')
-        break
-
-    elif opcao == 'e':
-        print(f"""
-        Vitórias: {vitorias}
-        Derrotas: {derrotas}
-        Empates: {empates}        
-        """)
-
+        return f'Empate! {usuario} X {pc}'
+    elif usuario == 'pedra' and pc == "tesoura":
+        vitoria +=1
+        return f'Você venceu! {usuario} X {pc}'
+    elif usuario == 'papel' and pc == 'pedra':
+        vitoria +=1
+        return f'Você venceu! {usuario} X {pc}'
+    elif usuario == 'tesoura' and pc == 'papel':
+        vitoria +=1
+        return f'Você venceu! {usuario} X {pc}'
     else:
-        print('Caracter não conhecido.')    
-        print("_"*60)
-        
+        derrota+=1
+        return f'Você perdeu! {usuario} X {pc}'
+
+# def estatisticas():
+
+#     return f"""
+#     vitorias: {vitorias}
+#     derrotas: {derrotas}
+#     empates: {empates}
+#     """ 
