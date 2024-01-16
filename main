@@ -1,1 +1,22 @@
+from comfuncao import *
 
+while True: 
+
+    pc = escolhaIa()
+
+    print("""
+        Pedra Papel ou Tesoura
+
+        F = fechar
+        E = estatisticas
+    """)
+    escolha = input('digite:\n').lower()
+    if escolha not in ['pedra', 'papel', 'tesoura', 'fechar', 'estatisticas']:
+        print('escolha não identificada.')
+    # elif escolha == 'estatisticas':
+    #     print(estatisticas())   
+    elif escolha == 'fechar':
+        print('Até a próxima!')
+        break
+    else:
+        print(joguinho(escolha, pc))
