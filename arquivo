@@ -4,29 +4,13 @@ def escolhaIa():
     return random.choice(['pedra', 'papel', 'tesoura'])
     
 def joguinho(usuario, pc):
-    vitoria = 0
-    derrota = 0
-    empate = 0
     if usuario == pc:
-        empate +=1
         return f'Empate! {usuario} X {pc}'
     elif usuario == 'pedra' and pc == "tesoura":
-        vitoria +=1
         return f'Você venceu! {usuario} X {pc}'
     elif usuario == 'papel' and pc == 'pedra':
-        vitoria +=1
         return f'Você venceu! {usuario} X {pc}'
     elif usuario == 'tesoura' and pc == 'papel':
-        vitoria +=1
         return f'Você venceu! {usuario} X {pc}'
     else:
-        derrota+=1
         return f'Você perdeu! {usuario} X {pc}'
-
-# def estatisticas():
-
-#     return f"""
-#     vitorias: {vitorias}
-#     derrotas: {derrotas}
-#     empates: {empates}
-#     """ 
